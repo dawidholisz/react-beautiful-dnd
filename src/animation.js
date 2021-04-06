@@ -47,14 +47,14 @@ export const transitions = {
   snap: `transform ${outOfTheWayTiming}, opacity ${outOfTheWayTiming}`,
   drop: (duration: number): string => {
     const timing: string = `${duration}s ${curves.drop}`;
-    return `transform ${timing}, opacity ${timing}`;
+    return `transform -${timing}, opacity ${timing}`;
   },
   outOfTheWay: `transform ${outOfTheWayTiming}`,
   placeholder: `height ${outOfTheWayTiming}, width ${outOfTheWayTiming}, margin ${outOfTheWayTiming}`,
 };
 
 const moveTo = (offset: Position): ?string =>
-  isEqual(offset, origin) ? null : `translate(${offset.x}px, ${offset.y}px)`;
+  isEqual(offset, origin) ? null : `translate(-${offset.x}px, ${offset.y}px)`;
 
 export const transforms = {
   moveTo,
